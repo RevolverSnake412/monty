@@ -14,20 +14,21 @@ void push(stack_t **stack, int value)
     new_node->next = *stack;
 
     if (*stack)
-    {
         (*stack)->prev = new_node;
-    }
 
     *stack = new_node;
 }
 
 void pall(stack_t **stack)
 {
-    stack_t *current = *stack;
-
-    while (current)
+    if (stack != NULL)
     {
-        printf("%d\n", current->n);
-        current = current->next;
+        stack_t *current = *stack;
+
+        while (current)
+        {
+            printf("%d\n", current->n);
+            current = current->next;
+        }
     }
 }
