@@ -39,6 +39,7 @@ typedef struct instruction_s
 
 /*** GLOBAL VARIABLES ***/
 extern stack_t *stack;
+extern FILE *file;
 
 /**************** FUNCTIONS ****************/
 /*** MISCS_C ***/

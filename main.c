@@ -1,6 +1,7 @@
 #include "monty.h"
 
 stack_t *stack = NULL;
+FILE *file;
 
 int main(int argc, char *argv[])
 {

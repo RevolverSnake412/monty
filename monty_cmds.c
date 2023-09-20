@@ -14,6 +14,7 @@ void push(stack_t **stack, char *arg, int line)
         {
             fprintf(stderr, "L%d: usage: push integer\n", line);
             free_stack(stack);
+            fclose(file);
             exit (EXIT_FAILURE);
         }
     }
