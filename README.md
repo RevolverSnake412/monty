@@ -1,1 +1,1 @@
-# Stacks and Queues. FILO/LOFI, FIFO/LILO 
+# Stacks and Queues. FILO/LOFI, FIFO/LILO
