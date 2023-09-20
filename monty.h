@@ -40,6 +40,10 @@ typedef struct instruction_s
 /*** GLOBAL VARIABLES ***/
 extern stack_t *stack;
 
+/**************** FUNCTIONS ****************/
+/*** MISCS_C ***/
+void free_stack(stack_t **stack)
+
 /*** MONTY_CMDS_C ***/
 void push(stack_t **stack, char *arg, int i);
 void pall(stack_t **stack);
