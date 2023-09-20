@@ -8,26 +8,22 @@ int main(int argc, char *argv[])
     char line[32];
     int i = 0;
 
-    if (argc == 0 || file == NULL)
+    if (argc != 2)
     {
         fprintf(stderr, "USAGE: monty file\n");
         exit (EXIT_FAILURE);
     }
 
-    /*
     if (file == NULL)
     {
-        printf("Error: Can't open file %s\n", argv[1]);
+        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         exit (EXIT_FAILURE);
     }
-    */
 
     while (fgets(line, sizeof(line), file))
     {
-        char *opcode, *arg;
-        opcode = strtok(line, " \n");
-        arg = strtok(NULL, " \n");
-
+        char *opcode = strtok(line, " \t\n$");
+        char *arg = strtok(NULL, " \t\n$");
         i++;
         
         if (opcode)
@@ -36,16 +32,21 @@ int main(int argc, char *argv[])
             {
                 int value = atoi(arg);
 
-                if (atoi(arg) == 0)
+                if (atoi(arg) == 0 && strcmp(arg, "0") != 0)
                 {
                     fprintf(stderr, "L%d: usage: push integer\n", i);
+                    fclose(file);
                     exit (EXIT_FAILURE);
                 }
                 push(&stack, value);
             }
             else if (strcmp(opcode, "pall") == 0)
-            {
                 pall(&stack);
+            else
+            {
+                fprintf(stderr, "L%d: unknown instruction %s\n", i, opcode);
+                fclose(file);
+                exit (EXIT_FAILURE);
             }
         }
     }

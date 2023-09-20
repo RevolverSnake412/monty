@@ -5,7 +5,7 @@ void push(stack_t **stack, int value)
     stack_t *new_node = malloc(sizeof(stack_t));
     if (!new_node)
     {
-        perror("Memory allocation error");
+        perror("malloc");
         exit (EXIT_FAILURE);
     }
 
