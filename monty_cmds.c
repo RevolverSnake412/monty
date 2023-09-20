@@ -12,11 +12,17 @@ void push(stack_t **stack, char *arg, int line)
 	stack_t *new_node = malloc(sizeof(stack_t));
 	int j = 0;
 
+	if (arg == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line);
+		exit(EXIT_FAILURE);
+	}
+
 	for (; arg[j]; j++)
 	{
 		if (arg[0] == 45)
 			continue;
-		if (arg[j] > 57 || arg[j] < 48)
+		if ((arg[j] > 57 || arg[j] < 48) || arg == NULL)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
 			free_stack(stack);

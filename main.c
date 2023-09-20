@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		counter++;
 		if (opcode)
 		{
-			if (strcmp(opcode, "push") == 0 && arg)
+			if (strcmp(opcode, "push") == 0)
 				push(&stack, arg, counter);
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack);
