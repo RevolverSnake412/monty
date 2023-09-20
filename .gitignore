@@ -2,4 +2,4 @@
 a.out
 *.m
 monty
-!task_*
+task_*
