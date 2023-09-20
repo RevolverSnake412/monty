@@ -1,15 +1,23 @@
 #include "monty.h"
 
-void push(stack_t **stack, char *arg, int i)
+void push(stack_t **stack, char *arg, int line)
 {
-    int value = atoi(arg);
+    int value;
     stack_t *new_node = malloc(sizeof(stack_t));
+    int j = 0;
 
-    if (atoi(arg) == 0 && strcmp(arg, "0") != 0)
+    for (; arg[j]; j++)
     {
-        fprintf(stderr, "L%d: usage: push integer\n", i);
-        exit (EXIT_FAILURE);
+        if (arg[0] == 45)
+            continue;
+        if (arg[j] > 57 || arg[j] < 48)
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", line);
+            exit (EXIT_FAILURE);
+        }
     }
+    
+    value = atoi(arg);
 
     if (!new_node)
     {
