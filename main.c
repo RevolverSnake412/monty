@@ -6,7 +6,7 @@ FILE *file;
 int main(int argc, char *argv[])
 {
     FILE *file = fopen(argv[1], "r");
-    char *line;
+    char line[256];
     int i = 0;
 
     if (argc != 2)
