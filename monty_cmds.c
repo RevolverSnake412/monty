@@ -21,7 +21,7 @@ void push(stack_t **stack, char *arg, int line)
 
     if (!new_node)
     {
-        fprintf(stderr, "Error: malloc failed\n", line);
+        fprintf(stderr, "Error: malloc failed\n");
         exit (EXIT_FAILURE);
     }
 
