@@ -12,6 +12,12 @@ void pint(stack_t **stack, int line_number)
         fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
         exit(EXIT_FAILURE);
     }
-    
+
+    if ((*stack)->n < INT_MIN || (*stack)->n > INT_MAX)
+    {
+        fprintf(stderr, "L%d: can't pint, value out of range\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+
     printf("%d\n", (*stack)->n);
 }
