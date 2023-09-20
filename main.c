@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
         {
             if (strcmp(opcode, "push") == 0 && arg)
                 push(&stack, arg, i);
+
             else if (strcmp(opcode, "pall") == 0)
                 pall(&stack);
             else
@@ -42,6 +43,6 @@ int main(int argc, char *argv[])
     }
 
     fclose(file);
-    free_stack(stack);
+    free_stack(&stack);
     return (0);
 }
