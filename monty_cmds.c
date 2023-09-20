@@ -43,7 +43,7 @@ void pall(stack_t **stack)
 
         while (current)
         {
-            printf("%d\n", current->n);
+            fprintf(stdout ,"%d\n", current->n);
             current = current->next;
         }
     }
