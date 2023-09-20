@@ -8,17 +8,19 @@ int main(int argc, char *argv[])
     char line[32];
     int i = 0;
 
-    if (argc != 2)
+    if (argc == 0 || file == NULL)
     {
-        printf("USAGE: monty file\n");
+        fprintf(stderr, "USAGE: monty file\n");
         exit (EXIT_FAILURE);
     }
 
+    /*
     if (file == NULL)
     {
         printf("Error: Can't open file %s\n", argv[1]);
         exit (EXIT_FAILURE);
     }
+    */
 
     while (fgets(line, sizeof(line), file))
     {
@@ -36,7 +38,7 @@ int main(int argc, char *argv[])
 
                 if (atoi(arg) == 0)
                 {
-                    printf("L%d: usage: push integer\n", i);
+                    fprintf(stderr, "L%d: usage: push integer\n", i);
                     exit (EXIT_FAILURE);
                 }
                 push(&stack, value);
