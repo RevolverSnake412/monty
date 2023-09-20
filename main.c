@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
         {
             if (strcmp(opcode, "push") == 0 && arg)
                 push(&stack, arg, i);
-
             else if (strcmp(opcode, "pall") == 0)
                 pall(&stack);
             else
