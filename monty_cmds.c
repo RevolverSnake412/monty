@@ -13,6 +13,7 @@ void push(stack_t **stack, char *arg, int line)
         if (arg[j] > 57 || arg[j] < 48)
         {
             fprintf(stderr, "L%d: usage: push integer\n", line);
+            free_stack(stack);
             exit (EXIT_FAILURE);
         }
     }
