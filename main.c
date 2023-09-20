@@ -29,17 +29,8 @@ int main(int argc, char *argv[])
         if (opcode)
         {
             if (strcmp(opcode, "push") == 0 && arg)
-            {
-                int value = atoi(arg);
+                push(&stack, arg, i);
 
-                if (atoi(arg) == 0 && strcmp(arg, "0") != 0)
-                {
-                    fprintf(stderr, "L%d: usage: push integer\n", i);
-                    fclose(file);
-                    exit (EXIT_FAILURE);
-                }
-                push(&stack, value);
-            }
             else if (strcmp(opcode, "pall") == 0)
                 pall(&stack);
             else

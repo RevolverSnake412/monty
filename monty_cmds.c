@@ -1,8 +1,16 @@
 #include "monty.h"
 
-void push(stack_t **stack, int value)
+void push(stack_t **stack, char *arg, int i)
 {
+    int value = atoi(arg);
     stack_t *new_node = malloc(sizeof(stack_t));
+
+    if (atoi(arg) == 0 && strcmp(arg, "0") != 0)
+    {
+        fprintf(stderr, "L%d: usage: push integer\n", i);
+        exit (EXIT_FAILURE);
+    }
+
     if (!new_node)
     {
         perror("malloc");

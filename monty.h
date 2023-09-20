@@ -41,7 +41,7 @@ typedef struct instruction_s
 extern stack_t *stack;
 
 /*** MONTY_CMDS_C ***/
-void push(stack_t **stack, int value);
+void push(stack_t **stack, char *arg, int i);
 void pall(stack_t **stack);
 
 #endif /* LISTS_H */
