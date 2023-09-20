@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			else if (strcmp(opcode, "pall") == 0)
 				pall(&stack);
 			else if (strcmp(opcode, "nop") == 0)
-				continue;
+				nop(&stack, counter);
 			else
 			{
 				fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
