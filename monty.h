@@ -51,4 +51,7 @@ void pall(stack_t **stack);
 /*** MONTY_PINT_C ***/
 void pint(stack_t **stack, int line_number);
 
+/*** MONTY_POP_C ***/
+void pop(stack_t **stack, int line_number);
+
 #endif /* LISTS_H */
