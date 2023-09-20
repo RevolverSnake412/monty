@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push: adds a new element into the slack
+ * push - adds a new element into the slack
  * @stack: our pure stack
  * @arg: the value to be added
  * @line: line count for errors
