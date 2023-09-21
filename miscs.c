@@ -2,8 +2,11 @@
 
 /**
  * execute - execute
+ * @stack: our pure stack
+ * @file: our pure file
  * @opcode: provided opcode
  * @arg: argument
+ * @counter: line count
 */
 void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 {
