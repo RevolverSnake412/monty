@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		char *arg;
 
 		counter++;
-		if (opcode[0] == "#")
+		if (opcode[0] == 35)
 			continue;
 		arg = strtok(NULL, " \t\n$");
 		execute(&stack, file, opcode, arg, counter);
