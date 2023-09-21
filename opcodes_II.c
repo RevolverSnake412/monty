@@ -8,8 +8,14 @@
 void _add(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
+	int i = 0;
 
-	if (current->next == NULL)
+	while (current)
+	{
+		current = current->next;
+		i++;
+	}
+	if (i < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		free_stack(stack);
