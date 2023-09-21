@@ -66,6 +66,11 @@ void pall(stack_t **stack)
 	}
 }
 
+/**
+ * swap - swaps last 2 elements in stack
+ * @stack: our pure stack
+ * @line: line count
+*/
 void swap(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
