@@ -48,7 +48,14 @@ void _div(stack_t **stack, int line)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	(**stack).next->n = (**stack).next->n * (**stack).n;
+	if ((**stack).n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	(**stack).next->n = (**stack).next->n / (**stack).n;
 	*stack = (**stack).next;
 }
 
