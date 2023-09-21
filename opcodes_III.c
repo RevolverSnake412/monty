@@ -32,35 +32,3 @@ void pchar(stack_t **stack, int line)
 		}
 	}
 }
-
-/**
- * pstr - prints string with ASCII chars
- * @stack: our pure stack
- *
- * Return: always 0
-*/
-int pstr(stack_t **stack)
-{
-	int flag = 0;
-
-	if (stack != NULL)
-	{
-		stack_t *current = *stack;
-
-		while (current)
-		{
-			if ((current->n > 127 || current->n < 0) ||
-			current->n == 0)
-			{
-				if (flag == 1)
-					putchar(10);
-				return (0);
-			}
-			flag = 1;
-			putchar(current->n);
-			current = current->next;
-		}
-			putchar(10);
-	}
-	return (0);
-}
