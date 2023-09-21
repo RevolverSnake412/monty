@@ -84,6 +84,18 @@ void pint(stack_t **stack, int line)
 	fprintf(stdout, "%d\n", current->n);
 }
 
+void pop(stack_t **stack, int line)
+{
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	*stack = (**stack).next;
+}
+
 /**
  * swap - swaps last 2 elements in stack
  * @stack: our pure stack
