@@ -7,7 +7,6 @@
 */
 void add(stack_t **stack, int line)
 {
-	stack_t *current;
 	int temp;
 
 	if (*stack == NULL || (**stack).next == NULL)
@@ -15,10 +14,7 @@ void add(stack_t **stack, int line)
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-    current = *stack;
-	temp = current->n;
-	current = current->next;
-	current->n = temp + current->n;
-
-	*stack = current;
+	temp = (**stack).n;
+	*stack = (**stack).next;
+	(**stack).n = temp + (**stack).n;
 }
