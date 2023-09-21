@@ -22,7 +22,6 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 			pop(stack, counter);
 		else if (strcmp(opcode, "swap") == 0)
 			swap(stack, counter);
-
 		else if (strcmp(opcode, "nop") == 0)
 			nop(stack, counter);
 		else if (strcmp(opcode, "add") == 0 ||
@@ -31,6 +30,8 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 				strcmp(opcode, "mul") == 0 ||
 				strcmp(opcode, "mod") == 0)
 			maths(stack, counter, opcode);
+		else if (strcmp(opcode, "pchar") == 0)
+			pchar(stack);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
