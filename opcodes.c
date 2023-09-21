@@ -74,6 +74,7 @@ void swap(stack_t **stack, int line)
 	if (!current || current->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+		free_stack(&current);
 		exit(EXIT_FAILURE);
 	}
 
