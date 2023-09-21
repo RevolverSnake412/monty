@@ -43,7 +43,9 @@ extern FILE *file;
 
 /**************** FUNCTIONS ****************/
 /*** MISCS_C ***/
-void execute(stack_t **stack, FILE *file, char *opcode, char* arg, int counter);
+void execute(stack_t **stack, FILE *file,
+			char *opcode, char *arg,
+			int counter);
 void free_stack(stack_t **stack);
 
 /*** MONTY_CMDS_C ***/

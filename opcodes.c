@@ -66,6 +66,11 @@ void pall(stack_t **stack)
 	}
 }
 
+/**
+ * pint - prints last element of the stack
+ * @stack: our pure stack
+ * @line: line count
+*/
 void pint(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
