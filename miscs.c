@@ -22,10 +22,15 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 			pop(stack, counter);
 		else if (strcmp(opcode, "swap") == 0)
 			swap(stack, counter);
-		else if (strcmp(opcode, "add") == 0)
-			add(stack, counter);
+
 		else if (strcmp(opcode, "nop") == 0)
 			nop(stack, counter);
+		else if (strcmp(opcode, "add") == 0 ||
+				strcmp(opcode, "sub") == 0 ||
+				strcmp(opcode, "div") == 0 ||
+				strcmp(opcode, "mul") == 0 ||
+				strcmp(opcode, "mod") == 0)
+					maths(stack, counter, opcode);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
@@ -47,4 +52,18 @@ void free_stack(stack_t **stack)
 		*stack = (*stack)->next;
 		free(temp);
 	}
+}
+
+void maths(stack_t **stack, int counter, char *opcode)
+{
+	if (strcmp(opcode, "add") == 0)
+		add(stack, counter);
+	if (strcmp(opcode, "sub") == 0)
+		sub(stack, counter);
+	if (strcmp(opcode, "div") == 0)
+		_div(stack, counter);
+	if (strcmp(opcode, "mul") == 0)
+		mul(stack, counter);
+	if (strcmp(opcode, "mod") == 0)
+		mod(stack, counter);
 }

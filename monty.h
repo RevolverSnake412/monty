@@ -47,14 +47,21 @@ void execute(stack_t **stack, FILE *file,
 			char *opcode, char *arg,
 			int counter);
 void free_stack(stack_t **stack);
+void maths(stack_t **stack, int counter, char *opcode);
 
-/*** MONTY_CMDS_C ***/
+/*** OPCODES_I_C ***/
 void push(stack_t **stack, char *arg, int i);
 void pall(stack_t **stack);
 void pint(stack_t **stack, int line);
 void pop(stack_t **stack, int line);
 void swap(stack_t **stack, int line);
-void add(stack_t **stack, int line);
 void nop(stack_t **stack, unsigned int counter);
+
+/*** OPCODES_II_C ***/
+void add(stack_t **stack, int line);
+void sub(stack_t **stack, int line);
+void _div(stack_t **stack, int line);
+void mul(stack_t **stack, int line);
+void mod(stack_t **stack, int line);
 
 #endif /* LISTS_H */
