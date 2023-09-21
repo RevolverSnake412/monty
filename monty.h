@@ -65,5 +65,7 @@ void mul(stack_t **stack, int line);
 void mod(stack_t **stack, int line);
 
 /*** OPCODES_III_C ***/
+void pchar(stack_t **stack, int line);
+int pstr(stack_t **stack);
 
 #endif /* LISTS_H */
