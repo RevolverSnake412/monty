@@ -14,7 +14,7 @@ void pchar(stack_t **stack, int line)
 		if (current == NULL)
 		{
 			fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
-			tree_stack(stack);
+			free_stack(stack);
 			exit(EXIT_FAILURE);
 		}
 
