@@ -45,7 +45,7 @@ void sub(stack_t **stack, int line)
 }
 
 /**
- * div - divs the last two elements
+ * _div - divs the last two elements
  * @stack: our pure stack
  * @line: line count
 */
