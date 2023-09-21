@@ -18,12 +18,14 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 			pall(stack);
 		else if (strcmp(opcode, "pint") == 0)
 			pint(stack, counter);
-		else if (strcmp(opcode, "swap") == 0)
-			swap(stack, counter);
-		else if (strcmp(opcode, "nop") == 0)
-			nop(stack, counter);
 		else if (strcmp(opcode, "pop") == 0)
 			pop(stack, counter);
+		else if (strcmp(opcode, "swap") == 0)
+			swap(stack, counter);
+		else if (strcmp(opcode, "add") == 0)
+			add(stack, counter);
+		else if (strcmp(opcode, "nop") == 0)
+			nop(stack, counter);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
