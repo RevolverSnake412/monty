@@ -21,5 +21,4 @@ void add(stack_t **stack, int line)
 	current->n = temp + current->n;
 
 	*stack = current;
-    free(current);
 }
