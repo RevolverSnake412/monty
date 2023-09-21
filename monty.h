@@ -43,11 +43,13 @@ extern FILE *file;
 
 /**************** FUNCTIONS ****************/
 /*** MISCS_C ***/
+void execute(stack_t **stack, FILE *file, char *opcode, char* arg, int counter);
 void free_stack(stack_t **stack);
 
 /*** MONTY_CMDS_C ***/
 void push(stack_t **stack, char *arg, int i);
 void pall(stack_t **stack);
+void swap(stack_t **stack);
 void nop(stack_t **stack, unsigned int counter);
 
 #endif /* LISTS_H */

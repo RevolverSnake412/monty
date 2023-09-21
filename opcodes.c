@@ -65,3 +65,16 @@ void pall(stack_t **stack)
 		}
 	}
 }
+
+void swap(stack_t **stack)
+{
+	stack_t *current = *stack;
+	int temp1, temp2;
+
+	temp1 = current->n;
+	current = current->next;
+	temp2 = current->n;
+	current->n = temp1;
+	current = current->prev;
+	current->n = temp2;
+}

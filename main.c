@@ -30,21 +30,7 @@ int main(int argc, char *argv[])
 		char *arg = strtok(NULL, " \t\n$");
 
 		counter++;
-		if (opcode)
-		{
-			if (strcmp(opcode, "push") == 0)
-				push(&stack, arg, counter);
-			else if (strcmp(opcode, "pall") == 0)
-				pall(&stack);
-			else if (strcmp(opcode, "nop") == 0)
-				nop(&stack, counter);
-			else
-			{
-				fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
-				fclose(file);
-				exit(EXIT_FAILURE);
-			}
-		}
+		execute(&stack, file, opcode, arg, counter);
 	}
 	fclose(file);
 	free_stack(&stack);
