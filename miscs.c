@@ -30,7 +30,7 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 				strcmp(opcode, "div") == 0 ||
 				strcmp(opcode, "mul") == 0 ||
 				strcmp(opcode, "mod") == 0)
-					maths(stack, counter, opcode);
+			maths(stack, counter, opcode);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
@@ -54,6 +54,12 @@ void free_stack(stack_t **stack)
 	}
 }
 
+/**
+ * maths - bundle of operations
+ * @stack: our pure stack
+ * @counter: line count
+ * @opcode: the operator
+*/
 void maths(stack_t **stack, int counter, char *opcode)
 {
 	if (strcmp(opcode, "add") == 0)

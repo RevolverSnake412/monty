@@ -56,13 +56,13 @@ void _div(stack_t **stack, int line)
 
 	if (current == NULL || current->next == NULL || current->n == 0)
 	{
-    	if (current == NULL || current->next == NULL)
-        	fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		if (current == NULL || current->next == NULL)
+			fprintf(stderr, "L%d: can't div, stack too short\n", line);
 		else
 			fprintf(stderr, "L%d: division by zero\n", line);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
-}
+	}
 
 	temp = current->n / current->next->n;
 	current->next->n = temp;
@@ -104,8 +104,8 @@ void mod(stack_t **stack, int line)
 
 	if (current == NULL || current->next == NULL || current->n == 0)
 	{
-    	if (current == NULL || current->next == NULL)
-        	fprintf(stderr, "L%d: can't mod, stack too short\n", line);
+		if (current == NULL || current->next == NULL)
+			fprintf(stderr, "L%d: can't mod, stack too short\n", line);
 		else
 			fprintf(stderr, "L%d: division by zero\n", line);
 		free_stack(stack);
