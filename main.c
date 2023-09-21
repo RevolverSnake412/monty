@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
 		char *arg;
 
 		counter++;
-		if (strcmp(opcode, "#") == 0)
-			nop(stack, counter);
+		if (opcode[0] == "#")
+			continue;
 		arg = strtok(NULL, " \t\n$");
 		execute(&stack, file, opcode, arg, counter);
 	}
