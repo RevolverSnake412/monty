@@ -57,7 +57,7 @@ void free_stack(stack_t **stack)
 void maths(stack_t **stack, int counter, char *opcode)
 {
 	if (strcmp(opcode, "add") == 0)
-		_add(stack, counter);
+		add(stack, counter);
 	if (strcmp(opcode, "sub") == 0)
 		sub(stack, counter);
 	if (strcmp(opcode, "div") == 0)

@@ -58,7 +58,7 @@ void swap(stack_t **stack, int line);
 void nop(stack_t **stack, unsigned int counter);
 
 /*** OPCODES_II_C ***/
-void _add(stack_t **stack, int line);
+void add(stack_t **stack, int line);
 void sub(stack_t **stack, int line);
 void _div(stack_t **stack, int line);
 void mul(stack_t **stack, int line);

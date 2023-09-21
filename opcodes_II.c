@@ -5,24 +5,20 @@
  * @stack: our pure stack
  * @line: line count
 */
-void _add(stack_t **stack, int line)
+void add(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
-	int i = 0;
+	int temp;
 
-	while (current)
-	{
-		current = current->next;
-		i++;
-	}
-	if (i < 2)
+	if (current == NULL || current->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	current->next->n = current->next->n + current->n;
-	current = current->next;
+	temp = current->n + current->next->n;
+	current->next->n = temp;
+	*stack = current->next;
 	free(current);
 }
 
