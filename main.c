@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 		counter++;
 		if (strcmp(opcode, "#") == 0)
-			continue;
+			nop(stack, counter);
 		arg = strtok(NULL, " \t\n$");
 		execute(&stack, file, opcode, arg, counter);
 	}
