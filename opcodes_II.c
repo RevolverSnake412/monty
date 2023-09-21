@@ -5,7 +5,7 @@
  * @stack: our pure stack
  * @line: line count
 */
-void add(stack_t **stack, int line)
+void _add(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
 
