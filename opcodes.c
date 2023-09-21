@@ -66,6 +66,19 @@ void pall(stack_t **stack)
 	}
 }
 
+void pint(stack_t **stack, int line)
+{
+	stack_t *current = *stack;
+
+	if (current == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	fprintf(stdout, "%d\n", current->n);
+}
+
 /**
  * swap - swaps last 2 elements in stack
  * @stack: our pure stack
