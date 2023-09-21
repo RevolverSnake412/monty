@@ -27,9 +27,12 @@ int main(int argc, char *argv[])
 	while (fgets(line, sizeof(line), file))
 	{
 		char *opcode = strtok(line, " \t\n$");
-		char *arg = strtok(NULL, " \t\n$");
+		char *arg;
 
 		counter++;
+		if (strcmp(opcode, "#") == 0)
+			continue;
+		arg = strtok(NULL, " \t\n$");
 		execute(&stack, file, opcode, arg, counter);
 	}
 	fclose(file);
