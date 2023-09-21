@@ -32,6 +32,8 @@ void execute(stack_t **stack, FILE *file, char *opcode, char *arg, int counter)
 			maths(stack, counter, opcode);
 		else if (strcmp(opcode, "pchar") == 0)
 			pchar(stack, counter);
+		else if (strcmp(opcode, "pstr") == 0)
+			pstr(stack);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
