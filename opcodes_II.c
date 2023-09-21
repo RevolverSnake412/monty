@@ -38,7 +38,7 @@ void sub(stack_t **stack, int line)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	temp = current->n - current->next->n;
+	temp = current->next->n - current->n;
 	current->next->n = temp;
 	*stack = current->next;
 	free(current);
