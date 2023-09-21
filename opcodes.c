@@ -66,15 +66,17 @@ void pall(stack_t **stack)
 	}
 }
 
-void swap(stack_t **stack)
+void swap(stack_t **stack, int line)
 {
 	stack_t *current = *stack;
-	int temp1, temp2;
+	int temp;
 
-	temp1 = current->n;
-	current = current->next;
-	temp2 = current->n;
-	current->n = temp1;
-	current = current->prev;
-	current->n = temp2;
+	if (!current->next)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short", line);
+	}
+
+	temp = current->n;
+	current->n = current->next->n;
+	current->next->n = temp;
 }

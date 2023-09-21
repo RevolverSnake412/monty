@@ -14,7 +14,7 @@ void execute(stack_t **stack, FILE *file, char *opcode, char* arg, int counter)
 			else if (strcmp(opcode, "pall") == 0)
 				pall(stack);
 			else if (strcmp(opcode, "swap") == 0)
-				swap(stack);
+				swap(stack, counter);
 			else if (strcmp(opcode, "nop") == 0)
 				nop(stack, counter);
 			else
