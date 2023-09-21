@@ -84,6 +84,11 @@ void pint(stack_t **stack, int line)
 	fprintf(stdout, "%d\n", current->n);
 }
 
+/**
+ * pop - deletes the last element of the stack
+ * @stack: our pure stack
+ * @line: current line count
+*/
 void pop(stack_t **stack, int line)
 {
 	stack_t *temp;
