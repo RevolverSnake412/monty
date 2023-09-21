@@ -30,5 +30,6 @@ void pchar(stack_t **stack, int line)
 			putchar(10);
 			current = current->next;
 		}
+        free(current);
 	}
 }
