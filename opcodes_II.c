@@ -64,7 +64,7 @@ void _div(stack_t **stack, int line)
 		exit(EXIT_FAILURE);
 	}
 
-	temp = current->n / current->next->n;
+	temp = current->next->n / current->n;
 	current->next->n = temp;
 	*stack = current->next;
 	free(current);
@@ -112,7 +112,7 @@ void mod(stack_t **stack, int line)
 		exit(EXIT_FAILURE);
 	}
 
-	temp = current->n % current->next->n;
+	temp = current->next->n % current->n;
 	current->next->n = temp;
 	*stack = current->next;
 	free(current);
